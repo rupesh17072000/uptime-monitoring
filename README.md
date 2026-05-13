@@ -1,10 +1,10 @@
 # Website Uptime Monitoring System
-A scalable website uptime monitoring system built with Laravel 10, Inertia.js, Vue 3 Composition API, MySQL, and Laravel Queues.
+A scalable website uptime monitoring system built with Laravel 10, Inertia.js, Vue3 Composition API,MySQL,and Laravel Queues.
 
 # Tech Stack
 * Laravel 10
 * Inertia.js
-* Vue 3 (Composition API)
+* Vue3(Composition API)
 * MySQL
 * Laravel Queues
 * Laravel Scheduler
@@ -12,42 +12,33 @@ A scalable website uptime monitoring system built with Laravel 10, Inertia.js, V
 * Tailwind CSS
 
 # Features
-
 ## Client Management
-
 * Each client has an email address
 * Each client can monitor multiple websites
 
 ## Website Monitoring
-
 * Websites are checked every 15 minutes
 * HTTP timeout set to 10 seconds
 * Detects unreachable websites and failed responses
 
 ## Email Notifications
-
 * Sends email alerts when a website goes down
 * Subject format:
   `{website URL} is down!`
 
 ## Frontend Features
-
 * Client email dropdown
 * Website hyperlinks
 * Confirmation dialog before opening website
 * Modern Vue 3 Composition API implementation
 
 ## Scalability Features
-
 * Queue-based monitoring system
 * Chunked website processing
 * Service layer architecture
 * Queue jobs for asynchronous processing
 
-
 # Project Architecture
-
-```text
 Scheduler
     ↓
 Artisan Command
@@ -59,7 +50,6 @@ Website Monitor Service
 Email Notifications
 
 # Installation
-
 ## 1. Clone Repository
 git clone https://github.com/your-username/uptime-monitor.git
 ## 2. Go To Project Directory
@@ -83,21 +73,17 @@ DB_PORT=3306
 DB_DATABASE=uptime_monitor
 DB_USERNAME=root
 DB_PASSWORD=
-# Queue Configuration
 
+# Queue Configuration
 For local development:
 env
 QUEUE_CONNECTION=database
 CACHE_DRIVER=file
 SESSION_DRIVER=file
-```
-
 The application architecture supports Redis queues in production without code changes.
 
 # Mail Configuration
-
 Example local mail configuration:
-
 env
 MAIL_MAILER=smtp
 MAIL_HOST=127.0.0.1
@@ -129,20 +115,17 @@ Production cron setup:
 
 * * * * * php /path-to-project/artisan schedule:run >> /dev/null 2>&1
 # Start Development Server
-
 ## Start Laravel
 php artisan serve
 ## Start Vite
 npm run dev
 
 # Monitoring Flow
-
 1. Scheduler runs every 15 minutes
 2. `websites:check` command executes
 3. Queue jobs are dispatched
 4. Each website is checked asynchronously
 5. Email alert is sent if website is down
-
 
 # Folder Structure
 app
@@ -174,28 +157,26 @@ Processes website checks asynchronously.
 Dispatches monitoring jobs every 15 minutes.
 # Frontend
 Built using:
-
 * Inertia.js
 * Vue 3 Composition API
 * Tailwind CSS
 
 Features:
-
 * Client dropdown
 * Website list
 * Confirmation dialog before opening website
-# Error Handling
 
+# Error Handling
 * HTTP request timeout handling
 * Exception logging
 * Queue-based fault tolerance
 * Prevent duplicate email alerts
-# Testing
 
+# Testing
 Run tests:
 php artisan test
-# Scalability Considerations
 
+# Scalability Considerations
 * Queue-based architecture
 * Chunked database processing
 * Decoupled service layer
@@ -212,7 +193,6 @@ php artisan test
 * Multi-channel alerts
 
 # Production Recommendations
-
 * Redis queues
 * Supervisor queue management
 * Horizon dashboard
