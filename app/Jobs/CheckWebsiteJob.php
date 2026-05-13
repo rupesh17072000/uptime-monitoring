@@ -14,14 +14,11 @@ class CheckWebsiteJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
     public Website $website;
-
-     public function __construct(Website $website)
-    {
+    
+    public function __construct(Website $website){
         $this->website=$website;
     }
-    public function handle(WebsiteMonitorService $service):void
-    {
+    public function handle(WebsiteMonitorService $service){
         $service->check($this->website);
     }
-
 }

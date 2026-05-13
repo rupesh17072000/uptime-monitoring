@@ -14,14 +14,11 @@ class Website extends Model
         'status_code',
         'last_checked_at'
     ];
-
     protected $casts=[
         'is_down'=>'boolean',
         'last_checked_at'=>'datetime'
     ];
-
-    public function client():BelongsTo
-    {
+    public function client():BelongsTo{
         return $this->belongsTo(Client::class);
     }
 }
