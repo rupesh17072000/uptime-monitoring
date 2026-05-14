@@ -10,7 +10,7 @@
         <div class="card mx-auto shadow" style="max-width: 500px;">
             <div class="card-body text-center">
                 <h3 class="text-danger mb-3">Website Down</h3>
-                <p>{{$website->url}} is currently down.</p>
+                <p>{{$website->url}} is down!</p>
             </div>
         </div>
     </div>

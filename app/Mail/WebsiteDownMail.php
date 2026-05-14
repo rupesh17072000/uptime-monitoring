@@ -8,6 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use App\Models\Website;
 use Illuminate\Mail\Mailable;
 
+
 class WebsiteDownMail extends Mailable
 {
     use Queueable, SerializesModels;
@@ -17,7 +18,7 @@ class WebsiteDownMail extends Mailable
         $this->website=$website;
     }
     public function build(){
-        return $this->subject("{$this->website->url} is currently down!")
-        ->view('emails.website-down');
+        return $this->subject("{$this->website->url} is down!")
+               ->view('emails.website-down');
     }
 }

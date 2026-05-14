@@ -10,7 +10,7 @@ use Inertia\Response;
 class DashboardController extends Controller
 {
     public function index(){
-        $clients=Client::with('websites')->paginate(10);
+        $clients=Client::with('websites')->get();
         return Inertia::render('Home',[
             'clients'=>$clients
         ]);

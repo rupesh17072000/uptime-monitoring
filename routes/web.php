@@ -5,8 +5,18 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/',[DashboardController::class,'index']);
+
+//form mail test
+// Route::get('/test-mail', function () {
+//     Mail::raw('Mailpit is working correctly!', function ($message) {
+//         $message->to('test@example.com')
+//                 ->subject('Laravel Mail Test');
+//     });
+//     return 'Mail Sent Successfully!';
+// });
 
 
 
